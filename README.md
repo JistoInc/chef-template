@@ -34,7 +34,7 @@ In this example we will be using the image name "myapache"
 ```
    2. Make a .chef directory to enable knife configuration.
 ```
-      mkdir .centos6-chef
+      mkdir .chef
 ```
    3. Configure knife to download cookbooks to the current directory
 ```
