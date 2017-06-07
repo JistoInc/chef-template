@@ -29,32 +29,34 @@ In this example we will be using the image name "myapache"
 ```
 3. Configure chef cookbooks for your app.
    1. Go into the cookbooks directory of the image template you just made
-      ```
+```
       cd myapache/cookbooks
-      ```
+```
    2. Make a .chef directory to enable knife configuration.
-      ```
+```
       mkdir .centos6-chef
-      ```
+```
    3. Configure knife to download cookbooks to the current directory
-      ```
+```
       echo "cookbook_path [ '$(pwd)' ]" > .chef/knife.rb
-      ```
+```
    4. Use knife to download cookbooks that you want. In this example, apache2
       Because this is chef zero we also download all dependencies.
-      ```knife supermarket download apache2
+```
+         knife supermarket download apache2
          knife supermarket download apt   
          knife supermarket download pacman   
          knife supermarket download iptables   
          knife supermarket download logrotate
-      ```
+```
    5. Untar each of the downloaded files, and clean up unneeded tar files.
-      ```tar xf apache2*.gz ; rm apache2*.gz   
+```
+         tar xf apache2*.gz ; rm apache2*.gz   
          tar xf apt*.gz ; rm apt*.gz   
          tar xf pacman*.gz ; rm pacman*.gz   
          tar xf iptables*.gz ; rm iptables*.gz   
          tar xf logrotate*.gz ; rm logrotate*.gz
-      ```
+```
    6. Edit web.json to specify which recipies will be used. 
       In this example, apache2
 ```json
@@ -62,8 +64,8 @@ In this example we will be using the image name "myapache"
 ```
    7. Create a tarfile to upload to the Jisto Server
       change to the toplevel image directory and create the tarfile
-      ```
+```
       cd ..
       tar czf ../myapache.tar.gz *
-      ```
+```
    8. Upload the image file to the jisto server on the images page
