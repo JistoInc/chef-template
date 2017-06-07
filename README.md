@@ -46,13 +46,15 @@ In this example we will be using the image name "myapache"
          knife supermarket download apt   
          knife supermarket download pacman   
          knife supermarket download iptables   
-         knife supermarket download logrotate```
+         knife supermarket download logrotate
+      ```
    5. Untar each of the downloaded files, and clean up unneeded tar files.
       ```tar xf apache2*.gz ; rm apache2*.gz   
          tar xf apt*.gz ; rm apt*.gz   
          tar xf pacman*.gz ; rm pacman*.gz   
          tar xf iptables*.gz ; rm iptables*.gz   
-         tar xf logrotate*.gz ; rm logrotate*.gz```
+         tar xf logrotate*.gz ; rm logrotate*.gz
+      ```
    6. Edit web.json to specify which recipies will be used. 
       In this example, apache2
 ```json
