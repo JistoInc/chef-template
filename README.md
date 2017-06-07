@@ -60,7 +60,7 @@ In this example we will be using the image name "myapache"
    6. Edit web.json to specify which recipies will be used. 
       In this example, apache2
 ```json
-{ "run_list": [ "recipe[apache2]" ] }
+echo '{ "run_list": [ "recipe[apache2]" ] }' > web.json
 ```
    7. Create a tarfile to upload to the Jisto Server
       change to the toplevel image directory and create the tarfile
