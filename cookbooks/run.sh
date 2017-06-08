@@ -8,6 +8,14 @@
 # this works around a bug on ubuntu
 mount -o remount,ro /sys/fs/selinux
 
+# wait for interfaces to come online
+sleep 5
+
 # do the thing
 cd /cookbooks
-chef-client --local-mode -j web.json
+count=1
+while [ $count -lt 3 ] ; do
+    chef-client --local-mode -j web.json
+    count=$((count + 1))
+    sleep 5
+done
